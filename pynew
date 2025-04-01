@@ -634,3 +634,23 @@ def build_gui():
 
 # Start GUI
 build_gui()
+
+
+
+
+def show_processing_popup(message="Processing..."):
+    popup = tk.Toplevel()
+    popup.title("Please Wait")
+    popup.geometry("300x100")
+    popup.configure(bg="black")
+    popup.transient()
+    popup.grab_set()
+
+    label = tk.Label(popup, text=message, fg="white", bg="black", font=("Arial", 12))
+    label.pack(expand=True)
+
+    popup.update_idletasks()
+    popup.update()
+
+    return popup
+
